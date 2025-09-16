@@ -2,14 +2,15 @@ SRC_DIR = src
 INCLUDE_DIR = include
 OBJ_DIR = obj
 
-NAME = interface
+NAME = bureaucrat
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_FILES =\
 	main.cpp\
+	Bureaucrat.cpp\
 
 INC_FILES =\
-	Character.hpp\
+	Bureaucrat.hpp\
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.cpp=.o))
