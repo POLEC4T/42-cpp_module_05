@@ -2,14 +2,17 @@ SRC_DIR = src
 INCLUDE_DIR = include
 OBJ_DIR = obj
 
-NAME = interface
+NAME = form
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_FILES =\
 	main.cpp\
+	Bureaucrat.cpp\
+	Form.cpp\
 
 INC_FILES =\
-	Character.hpp\
+	Bureaucrat.hpp\
+	Form.hpp\
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.cpp=.o))
@@ -21,7 +24,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ_FILES)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ_FILES) -I$(INCLUDE_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INCS) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDE_DIR)
