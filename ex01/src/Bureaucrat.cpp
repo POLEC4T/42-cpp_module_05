@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 01:01:00 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 03:44:39 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/16 03:58:21 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ void Bureaucrat::signForm(Form &form) const{
 	} catch (std::exception &e) {
 		std::cerr << _name
 			<< " couldn’t sign " << form.getName()
-			<< " because "
-			<< e.what()
-			<< std::endl; 
+			<< " because " << e.what() << std::endl; 
 	}
 }
 
