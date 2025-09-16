@@ -6,14 +6,11 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 01:01:00 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 05:09:14 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/16 12:36:14 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
-#include <stdexcept>
-
-
 
 Bureaucrat::Bureaucrat() : _name("Unknown bureaucrat") {
 	setGrade(150);
@@ -60,6 +57,26 @@ void Bureaucrat::incrementGrade() {
 
 void Bureaucrat::decrementGrade() {
 	setGrade(_grade + 1);
+}
+
+void Bureaucrat::signForm(AForm &form) const{
+	try {
+		form.beSigned(*this);
+	} catch (std::exception &e) {
+		std::cerr << _name
+			<< " couldn’t sign " << form.getName()
+			<< " because " << e.what() << std::endl; 
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const {
+	try {
+		form.execute(*this);
+	} catch (std::exception &e) {
+		std::cerr << _name
+			<< " couldn’t execute " << form.getName()
+			<< " because " << e.what() << std::endl; 
+	}
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bc) {
