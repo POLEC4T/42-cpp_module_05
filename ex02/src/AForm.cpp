@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 01:01:00 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 05:35:11 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/17 01:21:48 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,21 @@ std::ostream& operator<<(std::ostream &os, const AForm &bc) {
 	return (os);
 }
 
+void AForm::throwIfNotExecutable(const Bureaucrat &executor) const{
+	if (!_isSigned)
+		throw FormNotSignedException();
+	if (executor.getGrade() > _requiredGradeToExec)
+		throw GradeTooLowException();
+}
+
 const char *AForm::GradeTooHighException::what() const throw() {
 	return "AForm: grade too high";
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
 	return "AForm: grade too low";
+}
+
+const char *AForm::FormNotSignedException::what() const throw() {
+	return "AForm: form not signed";
 }

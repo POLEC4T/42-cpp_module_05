@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 05:35:46 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 12:34:52 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/17 01:23:10 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) :
 AForm(target + "_presidential", _requiredGradeToSign, _requiredGradeToExec),
 _target(target) {}
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
-	if (executor.getGrade() > _requiredGradeToExec)
-		throw GradeTooLowException();
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+{
+	throwIfNotExecutable(executor);
 	std::cout << _target << " has been pardonned by Zaphod Beeblebrox." << std::endl;
 }

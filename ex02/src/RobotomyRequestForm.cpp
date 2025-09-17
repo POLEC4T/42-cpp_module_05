@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 05:35:46 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 12:52:27 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/17 01:23:22 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ AForm(target + "_robotomy", _requiredGradeToSign, _requiredGradeToExec),
 _target(target) {}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-	if (executor.getGrade() > _requiredGradeToExec)
-		throw GradeTooLowException();
+	throwIfNotExecutable(executor);
 	if (rand() % 2)
 		std::cout << _target << " has been robotomized successfully" << std::endl;
 	else

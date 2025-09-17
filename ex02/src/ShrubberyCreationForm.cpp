@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 05:35:46 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 12:43:08 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/17 01:23:32 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ AForm(target + "_shrubbery", _requiredGradeToSign, _requiredGradeToExec),
 _target(target) {}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-	if (executor.getGrade() > _requiredGradeToExec)
-		throw GradeTooLowException();
+	throwIfNotExecutable(executor);
 	std::ofstream outfile;
 	outfile.open(_target + "_shrubbery");
 	if (outfile.fail()) {

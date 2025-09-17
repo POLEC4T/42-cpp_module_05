@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 01:01:00 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 12:36:14 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/17 01:35:11 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void Bureaucrat::signForm(AForm &form) const{
 void Bureaucrat::executeForm(AForm const &form) const {
 	try {
 		form.execute(*this);
+		std::cout << _name
+			<< " executed " << form.getName() << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << _name
 			<< " couldn’t execute " << form.getName()
