@@ -6,7 +6,7 @@
 /*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 01:44:59 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/18 02:12:15 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/18 02:52:19 by miloniemaz       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 Intern::Intern() {}
 
-Intern::Intern(const Intern &copy) {(void)copy;}
+Intern::Intern(const Intern &copy) {
+	*this = copy;
+}
 
 Intern& Intern::operator=(const Intern &other) {
 	(void) other;
