@@ -2,14 +2,25 @@ SRC_DIR = src
 INCLUDE_DIR = include
 OBJ_DIR = obj
 
-NAME = interface
+NAME = intern
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -ggdb3
 SRC_FILES =\
 	main.cpp\
+	PresidentialPardonForm.cpp\
+	RobotomyRequestForm.cpp\
+	ShrubberyCreationForm.cpp\
+	Bureaucrat.cpp\
+	Intern.cpp\
+	AForm.cpp\
 
 INC_FILES =\
-	Character.hpp\
+	PresidentialPardonForm.hpp\
+	RobotomyRequestForm.hpp\
+	Bureaucrat.hpp\
+	ShrubberyCreationForm.hpp\
+	Intern.hpp\
+	AForm.hpp\
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.cpp=.o))
