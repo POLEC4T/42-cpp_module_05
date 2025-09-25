@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include <cstdlib>
 #include "./Bureaucrat.hpp"
 
 class Bureaucrat;

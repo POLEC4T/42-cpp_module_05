@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 05:35:46 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/17 01:23:32 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/25 11:18:29 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ _target(target) {}
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	throwIfNotExecutable(executor);
 	std::ofstream outfile;
-	outfile.open(_target + "_shrubbery");
+	std::string shrubFilename = _target + "_shrubbery";
+	outfile.open(shrubFilename.c_str());
 	if (outfile.fail()) {
-		std::cerr << "Error: could not open file " << _target + "_shrubbery" << std::endl;
+		std::cerr << "Error: could not open file " << shrubFilename << std::endl;
 		return ;
 	}
 	outfile << ASCIITREE;
 	outfile.close();
-	std::cout << "Shrubbery created in " << _target + "_shrubbery" << std::endl;
+	std::cout << "Shrubbery created in " << shrubFilename << std::endl;
 }
