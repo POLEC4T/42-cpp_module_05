@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 00:46:41 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/16 12:35:56 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/30 12:22:30 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

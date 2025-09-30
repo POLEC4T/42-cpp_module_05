@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 00:46:41 by miloniemaz        #+#    #+#             */
 /*   Updated: 2025/09/16 02:05:37 by miloniemaz       ###   ########.fr       */
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include <cstdlib>
 #include "./Bureaucrat.hpp"
 
 class Bureaucrat;
